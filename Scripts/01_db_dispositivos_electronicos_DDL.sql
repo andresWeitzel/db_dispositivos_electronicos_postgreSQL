@@ -227,3 +227,116 @@ references componentes(id)
 on delete cascade;
 
 
+
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA RESISTORES_ALTA_FRECUENCIA ===========
+
+create table resistores_alta_frecuencia(
+	
+id int primary key,
+id_componente int not null,
+--Espec 
+capacitancia varchar(50), ---10000 uF
+rango_tolerancia varchar(50), ---  ± 5, ± 10, ± 20 standard
+rango_resis_gral varchar(30), ---  20 ? to 1000 ?
+rango_resis_microondas varchar(30), ---  20 ? to 100 ?
+capacitancia_parasita varchar(30), ---   0.2 pF
+--Caract. Térmicas			
+rango_temperatura varchar(50), --- -55 to +125 °C
+--Caract. Eléctricas
+tension_operativa varchar(50)---  100 V
+
+);
+
+-- ======= Restricciones Tabla resistores_alta_frecuencia ===========
+
+-- UNIQUE ID_COMPONENTE 
+alter table resistores_alta_frecuencia
+add constraint UNIQUE_resistores_alta_frecuencia_id_componente
+unique (id_componente);
+
+-- FK ID_COMPONENTE
+alter table resistores_alta_frecuencia
+add constraint CHECK_resistores_alta_frecuencia_id_componente
+foreign key(id_componente)
+references componentes(id)
+on delete cascade;
+
+
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA MICROCONTROLADORES_RISC_PICS ===========
+
+create table microcontroladores_risc_pics(
+	
+id int primary key,
+id_componente int not null,
+frec_operacion varchar(50), --- DC-40 Mhz
+memoria_programa varchar(50), ---  16384 bytes
+memoria_datos varchar(50), ---  768 bytes
+memoria_datos_eeprom varchar(50), ---  256 bytes
+cantidad_fuentes_interrup varchar(5), ---  19   
+cantidad_timers varchar(5), ---  4      
+comunic_seriales varchar(200), ---  MSSP, Enhanced USART      
+set_instrucciones varchar(200)---  75 Instructions; 83 with Extended Instruction Set Enabled     
+);
+
+-- ======= Restricciones Tabla microcontroladores_risc_pics ===========
+
+
+-- UNIQUE ID_COMPONENTE 
+alter table microcontroladores_risc_pics
+add constraint UNIQUE_microcontroladores_risc_pics_id_componente
+unique (id_componente);
+
+
+-- FK ID_COMPONENTE
+alter table microcontroladores_risc_pics
+add constraint CHECK_microcontroladores_risc_pics_id_componente
+foreign key(id_componente)
+references componentes(id)
+on delete cascade;	
+
+
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA MICROCONTROLADORES_RISC_AVRS ===========
+
+create table microcontroladores_risc_avrs(
+	
+id int primary key,
+id_componente varchar(2000)  not null,
+frec_operacion varchar(50), --- DC-40 Mhz
+tam_nucleo varchar(50), --- 8 bits
+tam_memoria_programa varchar(50), ---  16384 bytes
+tipo_memoria varchar(50), -- Memoria Flash
+cantidad_entr_sal varchar(5), ---  32   
+comunic_protocolos varchar(200), --- I²C, SPI, UART/USART  
+temp_funcionamiento varchar(50) ---  -40°C ~ 85°C (TA)
+
+);
+
+
+-- ======= Restricciones Tabla microcontroladores_risc_avrs ===========
+
+-- UNIQUE ID_COMPONENTE 
+alter table microcontroladores_risc_avrs
+add constraint UNIQUE_microcontroladores_risc_avrs_id_componente
+unique (id_componente);
+
+
+-- FK ID_COMPONENTE
+alter table microcontroladores_risc_avrs
+add constraint CHECK_microcontroladores_risc_avrs_id_componente
+foreign key(id_componente)
+references componentes(id)
+on delete cascade;
+
+
