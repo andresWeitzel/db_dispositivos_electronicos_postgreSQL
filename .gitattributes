@@ -1,2 +1,2 @@
-*.plpgsql linguist-detectable=true
+*.PLpgSQL linguist-detectable=true
 *.sql linguist-detectable=true
