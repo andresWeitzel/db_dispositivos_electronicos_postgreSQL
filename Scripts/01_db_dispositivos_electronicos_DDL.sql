@@ -153,4 +153,77 @@ references componentes(id)
 on delete cascade;
 
 
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA TRANSISTORES_MOSFET ===========
+
+create table transistores_mosfet(
+	
+id int primary key,
+id_componente int not null,
+tipo varchar(10) not null, -- nMos, pMos
+--Espec Máximas
+voltaje_drenaje_fuente varchar(30), ---40v
+corriente_cc_drenaje   varchar(30), ---0.15A
+--Caract. Térmicas			
+disip_max varchar(30), ---0.35W
+temp_op_max varchar(50), ----150 °C
+--Caract. Eléctricas
+conduct_drenaje_sustrato varchar(50), ---14 pF 
+resist_drenaje_fuente varchar(50)---30 Ohm
+
+);
+
+-- ======= Restricciones Tabla transistores_mosfet ===========
+
+-- UNIQUE ID_COMPONENTE 
+alter table transistores_mosfet
+add constraint UNIQUE_transistores_mosfet_id_componente
+unique (id_componente);
+
+-- FK ID_COMPONENTE
+alter table transistores_mosfet
+add constraint FK_transistores_mosfet_id_componente
+foreign key(id_componente)
+references componentes(id)
+on delete cascade;
+
+
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA CAPACITORES_ELECTROLITICOS ===========
+
+create table capacitores_electroliticos(
+	
+id int primary key,
+id_componente int not null,
+tipo varchar(30) not null, -- plomo axial, plomo radial, etc
+--Espec 
+capacitancia varchar(30), ---10000 uF
+tolerancia varchar(30), --- +/- 20%
+--Caract. Térmicas			
+rango_temperatura varchar(50), --- -55 °C to +105 °C
+--Caract. Eléctricas
+rango_tension_nominal varchar(50)--- 10 V to 100 V
+
+);
+
+-- ======= Restricciones Tabla capacitores_electroliticos ===========
+
+-- UNIQUE ID_COMPONENTE 
+alter table capacitores_electroliticos
+add constraint UNIQUE_capacitores_electroliticos_id_componente
+unique (id_componente);
+
+-- FK ID_COMPONENTE
+alter table capacitores_electroliticos
+add constraint CHECK_capacitores_electroliticos_id_componente
+foreign key(id_componente)
+references componentes(id)
+on delete cascade;
+
 
