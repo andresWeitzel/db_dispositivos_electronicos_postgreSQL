@@ -35,6 +35,20 @@ drop sequence if exists id_seq_plac_esp8266 cascade;
 drop sequence if exists id_seq_plac_esp32 cascade;
 
 
+-- Create sequences
+create sequence id_seq_comp;
+create sequence id_seq_comp_det;
+create sequence id_seq_trans_bip;
+create sequence id_seq_trans_mosf;
+create sequence id_seq_cap_elect;
+create sequence id_seq_resis_alt_frec;
+create sequence id_seq_micr_risc_pics;
+create sequence id_seq_micr_risc_avrs;
+create sequence id_seq_plac_arduinos;
+create sequence id_seq_plac_esp8266;
+create sequence id_seq_plac_esp32;
+
+
 
 -- ---------------------------------------------------------------------------
 
@@ -75,6 +89,10 @@ alter table componentes
 add constraint CHECK_componentes_precio
 check (precio > 0 );
 
+-- ADDED SEQUENCE
+alter table componentes alter id 
+set default nextval('id_seq_comp');
+
 
 -- ---------------------------------------------------------------------------
 
@@ -111,6 +129,10 @@ add constraint FK_componentes_detalles_id_componente
 foreign key(id_componente)
 references componentes(id)
 on delete cascade;
+
+-- ADDED SEQUENCE
+alter table componentes_detalles alter id 
+set default nextval('id_seq_comp_det');
 
 
 -- ---------------------------------------------------------------------------
@@ -152,6 +174,10 @@ foreign key(id_componente)
 references componentes(id)
 on delete cascade;
 
+-- ADDED SEQUENCE
+alter table transistores_bipolares alter id 
+set default nextval('id_seq_trans_bip');
+
 
 -- ---------------------------------------------------------------------------
 
@@ -190,6 +216,10 @@ foreign key(id_componente)
 references componentes(id)
 on delete cascade;
 
+-- ADDED SEQUENCE
+alter table transistores_mosfet alter id 
+set default nextval('id_seq_trans_mosf');
+
 
 -- ---------------------------------------------------------------------------
 
@@ -225,6 +255,10 @@ add constraint CHECK_capacitores_electroliticos_id_componente
 foreign key(id_componente)
 references componentes(id)
 on delete cascade;
+
+-- ADDED SEQUENCE
+alter table capacitores_electroliticos alter id 
+set default nextval('id_seq_cap_elect');
 
 
 
@@ -265,6 +299,12 @@ foreign key(id_componente)
 references componentes(id)
 on delete cascade;
 
+-- ADDED SEQUENCE
+alter table resistores_alta_frecuencia alter id 
+set default nextval('id_seq_resis_alt_frec');
+
+
+
 
 -- ---------------------------------------------------------------------------
 
@@ -301,6 +341,11 @@ add constraint CHECK_microcontroladores_risc_pics_id_componente
 foreign key(id_componente)
 references componentes(id)
 on delete cascade;	
+
+-- ADDED SEQUENCE
+alter table microcontroladores_risc_pics alter id 
+set default nextval('id_seq_micr_risc_pics');
+
 
 
 -- ---------------------------------------------------------------------------
@@ -339,6 +384,50 @@ foreign key(id_componente)
 references componentes(id)
 on delete cascade;
 
+-- ADDED SEQUENCE
+alter table microcontroladores_risc_avrs alter id 
+set default nextval('id_seq_micr_risc_avrs');
+
+
+
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA PLACAS_ARDUINOS ===========
+
+create table placas_arduinos(
+	
+id int primary key,
+id_componente int not null,
+procesador varchar(50), --- ATMega328P 
+frec_mem   varchar(20), -- 16 MHz
+tam_flash  varchar(20), -- 32 KB
+tam_sram   varchar(20), -- 2 KB
+tam_eeprom varchar(20), -- 1 KB
+cantidad_entr_sal varchar(5), ---  22   
+comunic_protocolos varchar(200)--- I2C, SPI, UART
+);
+
+-- ======= Restricciones Tabla placas_arduinos ===========
+
+-- UNIQUE ID_COMPONENTE 
+alter table placas_arduinos
+add constraint UNIQUE_placas_arduinos
+unique (id_componente);
+
+
+-- FK ID_COMPONENTE
+alter table placas_arduinos
+add constraint CHECK_placas_arduinos
+foreign key(id_componente)
+references componentes(id)
+on delete cascade;
+
+-- ADDED SEQUENCE
+alter table placas_arduinos alter id 
+set default nextval('id_seq_plac_arduinos');
+
 
 -- ---------------------------------------------------------------------------
 
@@ -374,6 +463,10 @@ add constraint CHECK_placas_esp8266
 foreign key(id_componente)
 references componentes(id)
 on delete cascade;
+
+-- ADDED SEQUENCE
+alter table placas_esp8266 alter id 
+set default nextval('id_seq_plac_esp8266');
 
 
 -- ---------------------------------------------------------------------------
@@ -413,6 +506,11 @@ add constraint CHECK_placas_esp32
 foreign key(id_componente)
 references componentes(id)
 on delete cascade;
+
+
+-- ADDED SEQUENCE
+alter table placas_esp32 alter id 
+set default nextval('id_seq_plac_esp32');
 
 
 -- ---------------------------------------------------------------------------
