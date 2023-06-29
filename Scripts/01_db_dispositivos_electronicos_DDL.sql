@@ -312,7 +312,7 @@ on delete cascade;
 create table microcontroladores_risc_avrs(
 	
 id int primary key,
-id_componente varchar(2000)  not null,
+id_componente int not null,
 frec_operacion varchar(50), --- DC-40 Mhz
 tam_nucleo varchar(50), --- 8 bits
 tam_memoria_programa varchar(50), ---  16384 bytes
@@ -340,3 +340,79 @@ references componentes(id)
 on delete cascade;
 
 
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA PLACAS_ESP8266 ===========
+
+create table placas_esp8266(
+	
+id int primary key,
+id_componente int not null,
+procesador varchar(100), --- CPU RISC de 32-bit: Tensilica Xtensa LX106 
+frec_mem varchar(20), -- 80 MHz
+tam_flash varchar(20), --  512 KB a 4 MB
+tam_sram varchar(20), -- 64 KB
+cantidad_entr_sal varchar(5), --- 16  
+comunic_protocolos varchar(100),  --- UART/SDIO/SPI/I2C/I2S/IR Remote Control
+prot_wifi varchar(100),  -- 802.11 b/g/n
+rango_frec varchar(100) -- 2.4G-2.5G (2400M-2483.5M)  
+);
+
+-- ======= Restricciones Tabla placas_esp8266 ===========
+
+-- UNIQUE ID_COMPONENTE 
+alter table placas_esp8266
+add constraint UNIQUE_placas_esp8266
+unique (id_componente);
+
+
+-- FK ID_COMPONENTE
+alter table placas_esp8266
+add constraint CHECK_placas_esp8266
+foreign key(id_componente)
+references componentes(id)
+on delete cascade;
+
+
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA PLACAS_ESP32 ===========
+
+create table placas_esp32(
+	
+id int primary key,
+id_componente int not null,
+procesador varchar(100), --- Procesador ARM Xtensa single-/dual-core 32-bit LX6
+frec_mem varchar(20), -- -
+tam_flash varchar(20), --  -
+tam_sram varchar(20), -- -
+cantidad_entr_sal varchar(5), --- -  
+comunic_protocolos varchar(100),  --- UART/SDIO/SPI/I2C/I2S/IR Remote Control
+prot_wifi varchar(100),  -- 802.11 b/g/n (802.11n up to 150 Mbps)
+rango_frec varchar(100), -- 2.4G-2.5G 
+modo_wifi varchar(100), -- Station/SoftAP/SoftAP+Station/P2P
+seg_wifi varchar(100), -- WPA/WPA2/WPA2-Enterprise/WPS
+prot_bluetooth varchar(100) -- Bluetooth v4.2 BR/EDR and BLE specification 
+);
+
+-- ======= Restricciones Tabla placas_esp32 ===========
+
+-- UNIQUE ID_COMPONENTE 
+alter table placas_esp32
+add constraint UNIQUE_placas_esp32
+unique (id_componente);
+
+
+-- FK ID_COMPONENTE
+alter table placas_esp32
+add constraint CHECK_placas_esp32
+foreign key(id_componente)
+references componentes(id)
+on delete cascade;
+
+
+-- ---------------------------------------------------------------------------
