@@ -14,6 +14,7 @@ drop table if exists transistores_bipolares cascade;
 drop table if exists transistores_mosfet cascade;
 drop table if exists capacitores_electroliticos cascade;
 drop table if exists resistores_alta_frecuencia cascade;
+drop table if exists microcontroladores_especif cascade;
 drop table if exists microcontroladores_risc_pics cascade;
 drop table if exists microcontroladores_risc_avrs cascade;
 drop table if exists placas_arduinos cascade;
@@ -28,6 +29,7 @@ drop sequence if exists id_seq_trans_bip cascade;
 drop sequence if exists id_seq_trans_mosf cascade;
 drop sequence if exists id_seq_cap_elect cascade;
 drop sequence if exists id_seq_resis_alt_frec cascade;
+drop sequence if exists id_seq_micr_especif cascade;
 drop sequence if exists id_seq_micr_risc_pics cascade;
 drop sequence if exists id_seq_micr_risc_avrs cascade;
 drop sequence if exists id_seq_plac_arduinos cascade;
@@ -42,6 +44,7 @@ create sequence id_seq_trans_bip;
 create sequence id_seq_trans_mosf;
 create sequence id_seq_cap_elect;
 create sequence id_seq_resis_alt_frec;
+create sequence id_seq_micr_especif;
 create sequence id_seq_micr_risc_pics;
 create sequence id_seq_micr_risc_avrs;
 create sequence id_seq_plac_arduinos;
@@ -62,7 +65,7 @@ codigo varchar(100) not null, -- ej: mh-r-447y8
 imagen varchar(1000), -- link de la imagen
 nro_pieza varchar(200) not null, -- ej: KSH13005
 categoria varchar(100) not null, -- ej: sensor, circuito integrado, transistor,etc
-descripcion varchar(100) not null, -- ej:transistor bjt npn
+descripcion varchar(400) not null, -- ej:transistor bjt npn
 fabricante varchar(100) not null, -- ej: SHANTOU HUASHAN, generico
 stock int not null, -- ej: 100, 200, etc
 precio decimal(8,2) not null -- ej: 5.55 dolares 
@@ -305,6 +308,33 @@ set default nextval('id_seq_resis_alt_frec');
 
 
 
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+
+-- ======= TABLA MICROCONTROLADORES_ESPECIF ===========
+
+create table microcontroladores_especif(
+	
+id int primary key,
+empaquetado varchar(100), ---Tray Alternate Packaging
+estilo_montaje varchar(50), ---	SMD/SMT
+cantidad_entr_sal varchar(50), -- 36 E/S
+temp_funcionamiento varchar(100), ---  -40°C ~ 85°C (TA)
+comunic_protocolos varchar(200), --- I²C, SPI, UART/USART
+frec_operacion varchar(50) --- DC-40 Mhz
+);
+
+
+-- ======= Restricciones Tabla microcontroladores_especif ===========
+
+
+-- ADDED SEQUENCE
+alter table microcontroladores_especif alter id 
+set default nextval('id_seq_micr_especif');
+
+
+
 
 -- ---------------------------------------------------------------------------
 
@@ -316,13 +346,12 @@ create table microcontroladores_risc_pics(
 	
 id int primary key,
 id_componente int not null,
-frec_operacion varchar(50), --- DC-40 Mhz
+id_especificacion int,
 memoria_programa varchar(50), ---  16384 bytes
 memoria_datos varchar(50), ---  768 bytes
 memoria_datos_eeprom varchar(50), ---  256 bytes
 cantidad_fuentes_interrup varchar(5), ---  19   
-cantidad_timers varchar(5), ---  4      
-comunic_seriales varchar(200), ---  MSSP, Enhanced USART      
+cantidad_timers varchar(5), ---  4     
 set_instrucciones varchar(200)---  75 Instructions; 83 with Extended Instruction Set Enabled     
 );
 
@@ -342,6 +371,13 @@ foreign key(id_componente)
 references componentes(id)
 on delete cascade;	
 
+-- FK ID_ESPECIFICACION
+alter table microcontroladores_risc_pics
+add constraint CHECK_microcontroladores_risc_pics_id_especif
+foreign key(id_especificacion)
+references microcontroladores_especif(id)
+on delete cascade;	
+
 -- ADDED SEQUENCE
 alter table microcontroladores_risc_pics alter id 
 set default nextval('id_seq_micr_risc_pics');
@@ -358,14 +394,10 @@ create table microcontroladores_risc_avrs(
 	
 id int primary key,
 id_componente int not null,
-frec_operacion varchar(50), --- DC-40 Mhz
+id_especificacion int,
 tam_nucleo varchar(50), --- 8 bits
 tam_memoria_programa varchar(50), ---  16384 bytes
-tipo_memoria varchar(50), -- Memoria Flash
-cantidad_entr_sal varchar(5), ---  32   
-comunic_protocolos varchar(200), --- I²C, SPI, UART/USART  
-temp_funcionamiento varchar(50) ---  -40°C ~ 85°C (TA)
-
+tipo_memoria varchar(50) -- Memoria Flash
 );
 
 
@@ -384,10 +416,16 @@ foreign key(id_componente)
 references componentes(id)
 on delete cascade;
 
+-- FK ID_ESPECIFICACION
+alter table microcontroladores_risc_avrs
+add constraint CHECK_microcontroladores_risc_avrs_id_especif
+foreign key(id_especificacion)
+references microcontroladores_especif(id)
+on delete cascade;	
+
 -- ADDED SEQUENCE
 alter table microcontroladores_risc_avrs alter id 
 set default nextval('id_seq_micr_risc_avrs');
-
 
 
 -- ---------------------------------------------------------------------------
