@@ -9,24 +9,8 @@
 			"configuration": {
 				"host": "localhost",
 				"port": "5432",
-				"database": "postgres",
-				"url": "jdbc:postgresql://localhost:5432/postgres",
-				"configurationType": "MANUAL",
-				"home": "postgresql-x64-13",
-				"type": "dev",
-				"auth-model": "native"
-			}
-		},
-		"postgres-jdbc-1890831d682-6e8a4ead026c3e86": {
-			"provider": "postgresql",
-			"driver": "postgres-jdbc",
-			"name": "postgres 2",
-			"save-password": true,
-			"configuration": {
-				"host": "localhost",
-				"port": "5432",
-				"database": "postgres",
-				"url": "jdbc:postgresql://localhost:5432/postgres",
+				"database": "db_dispositivos_electronicos",
+				"url": "jdbc:postgresql://localhost:5432/db_dispositivos_electronicos",
 				"configurationType": "MANUAL",
 				"home": "postgresql-x64-13",
 				"type": "dev",

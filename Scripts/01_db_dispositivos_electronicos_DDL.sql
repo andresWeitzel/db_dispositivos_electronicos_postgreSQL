@@ -7,18 +7,6 @@
  * ========= DDL =============
  */
 
-
-
---Database
-DROP DATABASE IF exists db_dispositivos_electronicos;
-
-CREATE DATABASE db_dispositivos_electronicos
-    WITH 
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    CONNECTION limit = -1; --no limit
- 
-
 --Tables
 drop table if exists componentes cascade;
 drop table if exists componentes_detalles cascade;
