@@ -82,7 +82,11 @@ Base de Datos acerca de Dispositivos Electrónicos, tales como transistores, cap
   
  <br>  
   
-
+* Descargar postgreSQL
+* Descargar DBeaver
+* Abrir DBeaver --> Archivo --> Incorporar proyecto del sistema de archivo
+* Desplegar pestaña del proyecto y ejecutar los Scripts (DLL,DML,ETC).
+* Si se desea ejecutar desde pgAdmin creamos una db con el nombre `db_dispositivos_electronicos` y ejecutamos los scripts según el orden numerado desde el editor sql
 <br>
 
 </details>
