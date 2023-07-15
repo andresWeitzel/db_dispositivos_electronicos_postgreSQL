@@ -87,7 +87,6 @@ insert into componentes(codigo , imagen , nro_pieza , categoria , descripcion , 
 
 
 
-
 -- ----- INSERTS TRANSISTORES MOSFET ------
 
 insert into componentes(codigo , imagen , nro_pieza , categoria , descripcion , fabricante , stock , precio) values
@@ -218,7 +217,223 @@ insert into componentes(codigo , imagen , nro_pieza , categoria , descripcion , 
  , 'WROOM-ESP32' , 'Placas Esp32' , 'Placa Esp32 WROOM 32ue' , 'Espressif Systems' , 5 , 20 );
 
 
- -- https://www.mouser.com/datasheet/2/891/esp-wroom-32_datasheet_en-1223836.pdf
 insert into componentes(codigo , imagen , nro_pieza , categoria , descripcion , fabricante , stock , precio) values
  ('H789DHJUi-ESP32' , 'https://raw.githubusercontent.com/andresWeitzel/db_microelectronica_Oracle/master/files/placasEsp32/02_Placa%20ESP32%20WROOM.webp' 
  , 'DHJUi-ESP32i' , 'Placas Esp32' , 'Placa ESP32 WROOM' , 'Espressif Systems' , 5 , 15  );
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ======= TABLA COMPONENTES_DETALLES ===========
+
+select * from componentes_detalles;
+
+
+-- ----- INSERTS TRANSISTORES BJT ------
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(1 , 'https://www.alldatasheet.com/datasheet-pdf/pdf/335783/HUASHAN/KSH13005.html?gclid=CjwKCAiAlrSPBhBaEiwAuLSDUFeS6YrIZoRclGdfPAGVxkvXDpENZQ76uvZ1PCot50KcnlLYfYgNwBoCdwoQAvD_BwE' 
+, '45mm' , '25mm' , '0.23 g' , 'silicio' , '25 VDC' , '12 VDC', '40 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(2 , 'https://alltransistors.com/adv/pdfdatasheet_inchange_semiconductor/3cd010g.pdf' 
+, '39mm' , '22mm' , '0.19 g' , 'silicio' , '5 VDC' , '-24 VDC', '20 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(3 , 'https://category.alldatasheet.com/index.jsp?components=TRANSISTOR' 
+, '47mm' , '32mm' , '0.27 g' , 'silicio' , '12 VDC' , '-24 VDC', '20 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(4 , 'https://www.alldatasheet.com/datasheet-pdf/pdf/907361/ROHM/DTA143EMFHA.html' 
+, '41mm' , '28mm' , '0.25 g' , 'silicio' , '5 VDC' , '-12 VDC', '35 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(5 , 'https://www.alldatasheet.com/datasheet-pdf/pdf/907361/ROHM/DTA143EMFHA.html' 
+, '37mm' , '19mm' , '0.16 g' , 'silicio' , '5 VDC' , '-24 VDC', '20 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(6 , 'https://alltransistors.com/adv/pdfdatasheet_inchange_semiconductor/3cd010g.pdf' 
+, '39mm' , '22mm' , '0.19 g' , 'silicio' , '5 VDC' , '-24 VDC', '25 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(7 , 'https://www.alldatasheet.com/datasheet-pdf/pdf/1131400/ROHM/DTC124EU3HZG.html' 
+, '26mm' , '21mm' , '0.18 g' , 'silicio' , '3.3 VDC' , '-12 VDC', '12 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(8 , 'https://www.alldatasheet.com/datasheet-pdf/pdf/1131400/ROHM/DTC124EU3HZG.html' 
+, '29mm' , '19mm' , '0.23 g' , 'silicio' , '3.3 VDC' , '-30 VDC', '30 VDC');
+
+
+
+
+-- ----- INSERTS TRANSISTORES MOSFET ------
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(9 , 'https://alltransistors.com/es/mosfet/transistor.php?transistor=18313' 
+, '56mm' , '38mm' , '0.45 g' , ' metal-óxido-silicio' , '35 VDC' , '20 VDC', '100 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(10 , 'https://alltransistors.com/adv/pdfdatasheet_slkor/sl60n06.pdf' 
+, '64mm' , '31mm' , '0.67 g' , ' metal-óxido-silicio' , '40 VDC' , '5 VDC', '60 VDC');
+
+
+
+
+
+-- ----- INSERTS CAPACITORES ELECTROLITICOS ------
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(11 , 'https://ar.mouser.com/datasheet/2/427/136rvi-2888792.pdf' , '71mm' , '21mm' , '0.97 g' , 'electrolito'
+, '10 a 100 VDC' , '10 VDC' , '100 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(12 , 'https://ar.mouser.com/datasheet/2/212/1/KEM_A4095_PEG228-1919468.pdf' ,  '76mm' , '19mm' , '0.87 g' , 'electrolito'
+, '25 a 64 VDC' , '10 VDC' , '100 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(13 , 'https://ar.mouser.com/c/ds/passive-components/capacitors/aluminum-electrolytic-capacitors/aluminum-electrolytic-capacitors-screw-terminal/' ,  '76mm' , '19mm' , '0.87 g' , 'electrolito'
+, '12 a 45 VDC' , '12 VDC' , '60 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(14 , 'https://ar.mouser.com/c/ds/passive-components/capacitors/aluminum-electrolytic-capacitors/aluminum-electrolytic-capacitors-screw-terminal/' ,  '76mm' , '19mm' , '0.87 g' , 'electrolito'
+, '110 a 220 VDC' , '110 VDC' , '220 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(15 , 'https://ar.mouser.com/c/ds/passive-components/capacitors/aluminum-electrolytic-capacitors/aluminum-electrolytic-capacitors-screw-terminal/' ,  '76mm' , '19mm' , '0.87 g' , 'electrolito'
+, '25 a 45 VDC' , '10 VDC' , '50 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(16 , 'https://ar.mouser.com/c/ds/passive-components/capacitors/aluminum-electrolytic-capacitors/aluminum-electrolytic-capacitors-screw-terminal/' ,  '76mm' , '19mm' , '0.87 g' , 'electrolito'
+, '12 a 24 VDC' , '12 VDC' , '24 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(17 , 'https://ar.mouser.com/c/ds/passive-components/capacitors/aluminum-electrolytic-capacitors/aluminum-electrolytic-capacitors-screw-terminal/' ,  '76mm' , '19mm' , '0.87 g' , 'electrolito'
+, '5 a 24 VDC' , '5 VDC' , '35 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(18 , 'https://ar.mouser.com/c/ds/passive-components/capacitors/aluminum-electrolytic-capacitors/aluminum-electrolytic-capacitors-screw-terminal/' ,  '76mm' , '19mm' , '0.87 g' , 'electrolito'
+, '25 a 110 VDC' , '10 VDC' , '110 VDC');
+
+
+
+
+-- ----- INSERTS RESISTORES DE ALTA FRECUENCIA------
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(19 , 'https://www.vishay.com/docs/61038/mif.pdf' ,  '19mm' , '12mm' , '0.11 g' , 'Nitrito de Tantanio'
+, '0 a 300 VDC' , '0 VDC' , '400 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(20 , 'https://ar.mouser.com/datasheet/2/40/resistive_prod_cs-1920496.pdf' , '17mm' , '9mm' , '0.08 g' , 'Nitrito de Tantanio'
+, '0 a 300 VDC' , '0 VDC' , '400 VDC');
+
+
+
+
+
+-- ----- INSERTS MICROCONTROLADORES_RISC_PICS ------
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(21 , 'https://www.kynix.com/uploadfiles/pdf8798/PIC18F4520-I2fPT_10386.pdf' , '189mm' , '110mm' , '0.110 g' , 'Metal'
+, '2 a 5.5 VDC' , '2.0 VDC' , '5.5 VDC');
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(22 , 'https://www.alldatasheet.com/view.jsp?Searchword=PIC-00130-001' ,  '192mm' , '190mm' , '0.130 g' , 'Metal'
+, '4.5 a 17 VDC' , '4.5 VDC' , '17 VDC');
+
+
+
+-- ----- INSERTS MICROCONTROLADORES_RISC_AVRS ------
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(23 , 'https://ww1.microchip.com/downloads/en/DeviceDoc/2503S.pdf' , '212mm' , '112mm' , '0.180 g' , 'Metal'
+, '2.7 a 5.5 VDC' , '2.7 VDC' , '5.5 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(24 , 'https://www.farnell.com/datasheets/2047852.pdf' , '222mm' , '177mm' , '0.123 g' , 'Metal'
+, '1.8 a 5.5 VDC' , '1.8 VDC' , '5.5 VDC');
+
+
+
+
+
+-- ----- INSERTS PLACAS ARDUINO------
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(25 , 'https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf' ,   '334mm' , '223mm' , '0.230 g' , 'Metal-Aluminio'
+, '3.3 a 5.0 VDC' , '3.3 VDC' , '5.0 VDC');
+
+ -- http://www.agspecinfo.com/pdfs/M/MB0016.PDF
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(26 , 'http://www.agspecinfo.com/pdfs/M/MB0016.PDF' ,  '324mm' , '224mm' , '0.213 g' , 'Metal-Aluminio'
+, '3.0 a 3.3 VDC' , '3.0 VDC' , '3.3 VDC');
+
+
+
+
+-- ----- INSERTS PLACAS_ESP8266------
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(27 , 'https://cdn-shop.adafruit.com/product-files/2471/0A-ESP8266__Datasheet__EN_v4.3.pdf' 
+, '182mm' , '115mm' , '0.330 g' , 'Aluminio' , '3.0 a 3.6 VDC' , '3.0 VDC' , '3.6 VDC');
+
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(28 , 'https://www.esploradores.com/doitwemos-d1-mini-nodemcu/' , '199mm' , '176mm' , '0.220 g' , 'Aluminio'
+, '3.3 a 5.0 VDC' , '3.3 VDC' , '5.0 VDC');
+
+
+ 
+-- ----- INSERTS PLACAS_ESP32------
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(29 , 'https://pdf1.alldatasheet.com/datasheet-pdf/view/1148034/ESPRESSIF/ESP-WROOM-02U.html' 
+, '123mm' , '112mm' , '0.167 g' , 'Aluminio', '2.7 a 3.6 VDC' , '2.7 VDC' , '3.6 VDC');
+
+
+insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
+, peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
+(30 , 'https://www.mouser.com/datasheet/2/891/esp-wroom-32_datasheet_en-1223836.pdf' 
+, '154mm' , '132mm' , '0.120 g' , 'Aluminio' , '2.7 a 3.6 VDC' , '2.7 VDC' , '3.6 VDC');
+
+

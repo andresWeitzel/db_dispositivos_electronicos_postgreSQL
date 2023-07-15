@@ -103,6 +103,7 @@ set default nextval('id_seq_comp');
 
 -- ======= TABLA COMPONENTES_DETALLES ===========
 
+
 create table componentes_detalles(
 	
 id 	int primary key,
