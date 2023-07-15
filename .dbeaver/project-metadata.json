@@ -1,1 +1,1 @@
-{"resources":{}}
+{"resources":{"Scripts/01_db_dispositivos_electronicos_DDL.sql":{"default-datasource":"postgres-jdbc-18904a3fd6d-566ebc85a57914d3","default-catalog":"db_dispositivos_electronicos","default-schema":"public"},"Scripts/02_db_dispositivos_electronicos_DML_INSERT.sql":{"default-datasource":"postgres-jdbc-18904a3fd6d-566ebc85a57914d3","default-catalog":"db_dispositivos_electronicos","default-schema":"public"}}}

@@ -1,1 +1,1 @@
-{"resources":{"Scripts/Script.sql":{"default-datasource":"postgres-jdbc-18904a3fd6d-566ebc85a57914d3"}}}
+{"resources":{"Scripts/02_db_dispositivos_electronicos_DML_INSERT.sql":{"default-datasource":"postgres-jdbc-18904a3fd6d-566ebc85a57914d3"}}}
