@@ -502,3 +502,25 @@ insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 
 
 
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- =========================================================
+-- ======= TABLA COMPONENTES_TRANSISTORES_MOSFET ===========
+-- =========================================================
+
+
+insert into transistores_mosfet(id_componente , tipo , voltaje_drenaje_fuente
+, corriente_cc_drenaje , disip_max, temp_op_max , conduct_drenaje_sustrato
+, resist_drenaje_fuente)values
+(9 , 'pMOS' , '35 VDC' , '6.2 A' , '30W' , '150°C' , ' 90(115) pF' , '0.032(0.064) Ohm');
+
+insert into transistores_mosfet(id_componente , tipo , voltaje_drenaje_fuente
+, corriente_cc_drenaje , disip_max, temp_op_max , conduct_drenaje_sustrato
+, resist_drenaje_fuente)values
+(10 , 'nMOS' , '100 VDC' , '20A' , '50W' , '240°C' , '-' , '-' );
+
+
+
