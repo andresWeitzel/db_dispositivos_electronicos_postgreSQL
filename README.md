@@ -4,7 +4,6 @@
 Base de Datos acerca de Dispositivos Electrónicos, tales como transistores, capacitores, resistores de alta frecuencia, etc.
 
 * [Sitio web ejemplificación](http://gmelectronicaweb.com/catalogo/pag108.html)
-* [Repositorio db migrado (Oracle --> PostgreSQL)](https://github.com/andresWeitzel/db_microelectronica_Oracle)
 * [ApiRest_Dispositivos_Electronicos_ExpressJS](https://github.com/andresWeitzel/ApiRest_Dispositivos_Electronicos_ExpressJS)
 
 <br>

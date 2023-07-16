@@ -39,7 +39,11 @@ alter sequence id_seq_plac_esp32 restart;
 -- ---------------------------------------------------------------------------
 
 
+-- =====================================
 -- ======= TABLA COMPONENTES ===========
+-- =====================================
+
+
 select * from componentes;
 select * from information_schema.columns where table_name='componentes';
 
@@ -227,7 +231,9 @@ insert into componentes(codigo , imagen , nro_pieza , categoria , descripcion , 
 -- ---------------------------------------------------------------------------
 
 
+-- ==============================================
 -- ======= TABLA COMPONENTES_DETALLES ===========
+-- ==============================================
 
 select * from componentes_detalles;
 
@@ -435,5 +441,64 @@ insert into componentes_detalles(id_componente , hoja_de_datos , longitud , anch
 , peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
 (30 , 'https://www.mouser.com/datasheet/2/891/esp-wroom-32_datasheet_en-1223836.pdf' 
 , '154mm' , '132mm' , '0.120 g' , 'Aluminio' , '2.7 a 3.6 VDC' , '2.7 VDC' , '3.6 VDC');
+
+
+
+
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ============================================================
+-- ======= TABLA COMPONENTES_TRANSISTORES_BIPOLARES ===========
+-- ============================================================
+
+
+
+insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
+, voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
+, ganancia_hfe , disip_max , temp_juntura )values
+(1 , 'NPN' , '5 VDC' , '0.5 VDC' , '0.2 VDC' , '1.2 VDC' , '0.75 A' , '200' ,'75 W' , '150°C');
+
+insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
+, voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
+, ganancia_hfe , disip_max , temp_juntura)values
+(2 , 'PNP' , '-200 VDC' , '-200 VDC' , '-5 VDC' , '-1 VDC' , '1.5 A' , '15'  ,'10 W' , '175°C' );
+
+
+insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
+, voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
+, ganancia_hfe , disip_max , temp_juntura)values
+(3 , 'NPN' , '-110 VDC' , '-220 VDC' , '-3.3 VDC' , '-2.2 VDC' , '2.5 A' , '15'  ,'12 W' , '185°C' );
+
+insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
+, voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
+, ganancia_hfe , disip_max , temp_juntura)values
+(4 , 'PNP' , '-200 VDC' , '-200 VDC' , '-5 VDC' , '-5 VDC' , '1.5 A' , '25'  ,'10 W' , '250°C' );
+
+insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
+, voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
+, ganancia_hfe , disip_max , temp_juntura)values
+(5 , 'NPN' , '-220 VDC' , '-220 VDC' , '-12 VDC' , '-12 VDC' , '1.5 A' , '5'  ,'15 W' , '120°C' );
+
+insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
+, voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
+, ganancia_hfe , disip_max , temp_juntura)values
+(6 , 'PNP' , '-110 VDC' , '-110 VDC' , '-25 VDC' , '-12 VDC' , '1 A' , '15'  ,'25 W' , '330°C' );
+
+insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
+, voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
+, ganancia_hfe , disip_max , temp_juntura)values
+(7 , 'PNP' , '-70 VDC' , '-70 VDC' , '-5 VDC' , '-12 VDC' , '2 A' , '25'  ,'30 W' , '230°C' );
+
+insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
+, voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
+, ganancia_hfe , disip_max , temp_juntura)values
+(8 , 'NPN' , '-25 VDC' , '-25 VDC' , '-12 VDC' , '-5 VDC' , '1.8 A' , '25'  ,'15 W' , '130°C' );
+
+
 
 
