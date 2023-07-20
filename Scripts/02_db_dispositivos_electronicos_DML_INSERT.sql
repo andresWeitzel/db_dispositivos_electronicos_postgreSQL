@@ -1,5 +1,5 @@
 /* -----------------------------------------
- * ------ DISPOSITIVOS ELECTR�NICOS ---------
+ * ------ DISPOSITIVOS ELECTRÓNICOS ---------
  * -----------------------------------------
  * 
  * 
@@ -123,8 +123,8 @@ insert into componentes(codigo , imagen , nro_pieza , categoria , descripcion , 
  
  
    insert into componentes(codigo , imagen , nro_pieza , categoria , descripcion , fabricante , stock , precio) values
- ('LS�K871-JSKU99','https://raw.githubusercontent.com/andresWeitzel/db_microelectronica_Oracle/master/files/capacitoresElectr/04_Capacitor%20Electrolitico%20de%20Aluminio%20Encaje%20a%20Presi%C3%B3n%20hitachi.webp' 
- , 'JSKU99' , 'Capacitores Electroliticos' , 'Capacitor Electrolitico de Aluminio Encaje a Presi�n' , 'HITACHI', 67 , 3);
+ ('LSÑK871-JSKU99','https://raw.githubusercontent.com/andresWeitzel/db_microelectronica_Oracle/master/files/capacitoresElectr/04_Capacitor%20Electrolitico%20de%20Aluminio%20Encaje%20a%20Presi%C3%B3n%20hitachi.webp' 
+ , 'JSKU99' , 'Capacitores Electroliticos' , 'Capacitor Electrolitico de Aluminio Encaje a Presión' , 'HITACHI', 67 , 3);
  
    insert into componentes(codigo , imagen , nro_pieza , categoria , descripcion , fabricante , stock , precio) values
  ('JSUKOW987-029IOKKL','https://raw.githubusercontent.com/andresWeitzel/db_microelectronica_Oracle/master/files/capacitoresElectr/05_Capacitor%20Electrolitico%20de%20Aluminio%20Terminal%20Roscado%20elna.webp' 
@@ -288,13 +288,13 @@ insert into componentes_detalles(id_componente , hoja_de_datos , longitud , anch
 insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
 , peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
 (9 , 'https://alltransistors.com/es/mosfet/transistor.php?transistor=18313' 
-, '56mm' , '38mm' , '0.45 g' , ' metal-�xido-silicio' , '35 VDC' , '20 VDC', '100 VDC');
+, '56mm' , '38mm' , '0.45 g' , ' metal-óxido-silicio' , '35 VDC' , '20 VDC', '100 VDC');
 
 
 insert into componentes_detalles(id_componente , hoja_de_datos , longitud , ancho 
 , peso ,material, voltaje_recomendado , voltaje_min_entrada , voltaje_max_entrada)values
 (10 , 'https://alltransistors.com/adv/pdfdatasheet_slkor/sl60n06.pdf' 
-, '64mm' , '31mm' , '0.67 g' , ' metal-�xido-silicio' , '40 VDC' , '5 VDC', '60 VDC');
+, '64mm' , '31mm' , '0.67 g' , ' metal-óxido-silicio' , '40 VDC' , '5 VDC', '60 VDC');
 
 
 
@@ -452,52 +452,51 @@ insert into componentes_detalles(id_componente , hoja_de_datos , longitud , anch
 -- ---------------------------------------------------------------------------
 
 
--- ============================================================
--- ======= TABLA COMPONENTES_TRANSISTORES_BIPOLARES ===========
--- ============================================================
-
+-- ================================================
+-- ======= TABLA TRANSISTORES_BIPOLARES ===========
+-- ================================================
 
 
 insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 , voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
 , ganancia_hfe , disip_max , temp_juntura )values
-(1 , 'NPN' , '5 VDC' , '0.5 VDC' , '0.2 VDC' , '1.2 VDC' , '0.75 A' , '200' ,'75 W' , '150�C');
+(1 , 'NPN' , '5 VDC' , '0.5 VDC' , '0.2 VDC' , '1.2 VDC' , '0.75 A' , '200' ,'75 W' , '150°C');
 
 insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 , voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
 , ganancia_hfe , disip_max , temp_juntura)values
-(2 , 'PNP' , '-200 VDC' , '-200 VDC' , '-5 VDC' , '-1 VDC' , '1.5 A' , '15'  ,'10 W' , '175�C' );
+(2 , 'PNP' , '-200 VDC' , '-200 VDC' , '-5 VDC' , '-1 VDC' , '1.5 A' , '15'  ,'10 W' , '175°C' );
 
 
 insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 , voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
 , ganancia_hfe , disip_max , temp_juntura)values
-(3 , 'NPN' , '-110 VDC' , '-220 VDC' , '-3.3 VDC' , '-2.2 VDC' , '2.5 A' , '15'  ,'12 W' , '185�C' );
+(3 , 'NPN' , '-110 VDC' , '-220 VDC' , '-3.3 VDC' , '-2.2 VDC' , '2.5 A' , '15'  ,'12 W' , '185°C' );
 
 insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 , voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
 , ganancia_hfe , disip_max , temp_juntura)values
-(4 , 'PNP' , '-200 VDC' , '-200 VDC' , '-5 VDC' , '-5 VDC' , '1.5 A' , '25'  ,'10 W' , '250�C' );
+(4 , 'PNP' , '-200 VDC' , '-200 VDC' , '-5 VDC' , '-5 VDC' , '1.5 A' , '25'  ,'10 W' , '250°C' );
 
 insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 , voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
 , ganancia_hfe , disip_max , temp_juntura)values
-(5 , 'NPN' , '-220 VDC' , '-220 VDC' , '-12 VDC' , '-12 VDC' , '1.5 A' , '5'  ,'15 W' , '120�C' );
+(5 , 'NPN' , '-220 VDC' , '-220 VDC' , '-12 VDC' , '-12 VDC' , '1.5 A' , '5'  ,'15 W' , '120°C' );
 
 insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 , voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
 , ganancia_hfe , disip_max , temp_juntura)values
-(6 , 'PNP' , '-110 VDC' , '-110 VDC' , '-25 VDC' , '-12 VDC' , '1 A' , '15'  ,'25 W' , '330�C' );
+(6 , 'PNP' , '-110 VDC' , '-110 VDC' , '-25 VDC' , '-12 VDC' , '1 A' , '15'  ,'25 W' , '330°C' );
 
 insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 , voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
 , ganancia_hfe , disip_max , temp_juntura)values
-(7 , 'PNP' , '-70 VDC' , '-70 VDC' , '-5 VDC' , '-12 VDC' , '2 A' , '25'  ,'30 W' , '230�C' );
+(7 , 'PNP' , '-70 VDC' , '-70 VDC' , '-5 VDC' , '-12 VDC' , '2 A' , '25'  ,'30 W' , '230°C' );
 
 insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 , voltaje_colec_base , voltaje_emis_base , voltaje_colec_emis_sat , corriente_colec 
 , ganancia_hfe , disip_max , temp_juntura)values
-(8 , 'NPN' , '-25 VDC' , '-25 VDC' , '-12 VDC' , '-5 VDC' , '1.8 A' , '25'  ,'15 W' , '130�C' );
+(8 , 'NPN' , '-25 VDC' , '-25 VDC' , '-12 VDC' , '-5 VDC' , '1.8 A' , '25'  ,'15 W' , '130°C' );
 
 
 
@@ -507,20 +506,214 @@ insert into transistores_bipolares(id_componente , tipo , voltaje_colec_emis
 -- ---------------------------------------------------------------------------
 
 
--- =========================================================
--- ======= TABLA COMPONENTES_TRANSISTORES_MOSFET ===========
--- =========================================================
+-- =============================================
+-- ======= TABLA TRANSISTORES_MOSFET ===========
+-- =============================================
 
 
 insert into transistores_mosfet(id_componente , tipo , voltaje_drenaje_fuente
 , corriente_cc_drenaje , disip_max, temp_op_max , conduct_drenaje_sustrato
 , resist_drenaje_fuente)values
-(9 , 'pMOS' , '35 VDC' , '6.2 A' , '30W' , '150�C' , ' 90(115) pF' , '0.032(0.064) Ohm');
+(9 , 'pMOS' , '35 VDC' , '6.2 A' , '30W' , '150°C' , ' 90(115) pF' , '0.032(0.064) Ohm');
 
 insert into transistores_mosfet(id_componente , tipo , voltaje_drenaje_fuente
 , corriente_cc_drenaje , disip_max, temp_op_max , conduct_drenaje_sustrato
 , resist_drenaje_fuente)values
-(10 , 'nMOS' , '100 VDC' , '20A' , '50W' , '240�C' , '-' , '-' );
+(10 , 'nMOS' , '100 VDC' , '20A' , '50W' , '240°C' , '-' , '-' );
 
 
 
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ====================================================
+-- ======= TABLA CAPACITORES_ELECTROLITICOS ===========
+-- ====================================================
+
+
+insert into capacitores_electroliticos(id_componente , tipo , capacitancia
+, tolerancia , rango_temperatura , rango_tension_nominal)values
+(11 , 'Plomo Radial' , '22 ?F a 10 000 ?F' , '± 20 %' , '-55 °C a +105 °C' , '10 V to 100 V'); 
+
+insert into capacitores_electroliticos(id_componente , tipo , capacitancia
+, tolerancia , rango_temperatura , rango_tension_nominal)values
+(12 , 'Plomo Axial' , '520  7,000 µF' , '10/+30%' , '40 to +150°C' , '25  63 VDC');
+
+
+insert into capacitores_electroliticos(id_componente , tipo , capacitancia
+, tolerancia , rango_temperatura , rango_tension_nominal)values
+(13 , 'Plomo Axial Terminal Roscado' , '220  1,000 µF' , '20/+40%' , '20 to +170°C' , '110  220 VDC');
+
+insert into capacitores_electroliticos(id_componente , tipo , capacitancia
+, tolerancia , rango_temperatura , rango_tension_nominal)values
+(14 , 'Plomo Axial Encaje a Presión' , '221  2,000 µF' , '30/+50%' , '10 to +187°C' , '60  110 VDC');
+
+insert into capacitores_electroliticos(id_componente , tipo , capacitancia
+, tolerancia , rango_temperatura , rango_tension_nominal)values
+(15 , 'Plomo Radial' , '559  1,000 µF' , '10/+10%' , '32 to +120°C' , '110  220 VDC');
+
+insert into capacitores_electroliticos(id_componente , tipo , capacitancia
+, tolerancia , rango_temperatura , rango_tension_nominal)values
+(16 , 'Plomo Axial' , '670  2,200 µF' , '10/+20%' , '12 to +130°C' , '25  110 VDC');
+
+insert into capacitores_electroliticos(id_componente , tipo , capacitancia
+, tolerancia , rango_temperatura , rango_tension_nominal)values
+(17 , 'Plomo Terminal Roscado' , '670  2,100 µF' , '30/+10%' , '50 to +110°C' , '12  53 VDC');
+
+insert into capacitores_electroliticos(id_componente , tipo , capacitancia
+, tolerancia , rango_temperatura , rango_tension_nominal)values
+(18 , 'Plomo Radial Encaje a Presión' , '110  1,200 µF' , '40/+10%' , '10 to +120°C' , '25  220 VDC');
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ===========================================================
+-- ======= TABLA RESISTORES DE ALTA FRECUENCIA ===============
+-- ===========================================================
+
+insert into resistores_alta_frecuencia(id_componente, capacitancia ,rango_tolerancia
+, rango_resis_gral , rango_resis_microondas , capacitancia_parasita , rango_temperatura , tension_operativa
+)values( 19 , '-' , ' +- 1, +- 5, +- 10, +- 20 standard' , '20 to 100' , '+- 100' , '-' , ' - 55 to + 125' , '100 max.');
+
+ 
+insert into resistores_alta_frecuencia(id_componente, capacitancia ,rango_tolerancia
+, rango_resis_gral , rango_resis_microondas , capacitancia_parasita , rango_temperatura , tension_operativa
+)values( 20 , '4' , ' +- 40 standard' , '15 to 90' , '+- 120' , '-' , ' -' , '120 max.');
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ==========================================================
+-- ======= TABLA MICROCONTROLADORES_ESPECIF ===============
+-- ==========================================================
+
+insert into microcontroladores_especif (empaquetado, estilo_montaje, cantidad_entr_sal
+, temp_funcionamiento, comunic_protocolos, frec_operacion) values
+('Tray Alternate Packaging', 'SMD/SMT', '36 E/S', '-40°C ~ 85°C (TA)', 'I²C, SPI, UART/USART', ' DC-40 Mhz'),
+('Standard Packaging', 'SMD/SMT', '40 E/S', '-60°C ~ 115°C (TA)', 'SPI, UART/USART', ' DC-40 Mhz'),
+('Production Packaging', 'SMD/SMT', '50 E/S', '-80°C ~ 130°C (TA)', 'SPI, UART/USART', ' DC-50 Mhz'),
+('Standard Packaging', 'SMD/SMT', '45 E/S', '-70°C ~ 115°C (TA)', 'UART/USART', ' DC-60 Mhz');
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ==========================================================
+-- ======= TABLA MICROCONTROLADORES_RISC_PICS ===============
+-- ==========================================================
+
+insert into microcontroladores_risc_pics(id_componente, id_especificacion
+, memoria_programa , memoria_datos , memoria_datos_eeprom , cantidad_fuentes_interrup
+, cantidad_timers, set_instrucciones ) values 
+(21, 1 , '16384 bytes' , '768 bytes' , '256 bytes' , 19 , 4 
+, '75 Instructions; 83 with Extended Instruction Set Enabled');
+
+
+
+insert into microcontroladores_risc_pics(id_componente, id_especificacion
+, memoria_programa , memoria_datos , memoria_datos_eeprom , cantidad_fuentes_interrup
+, cantidad_timers, set_instrucciones ) values 
+(22 , 2, '21444 bytes' , '1200 bytes' , '256 bytes' , 19 , 4
+, '115 with Extended Instruction Set Enabled');
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ==========================================================
+-- ======= TABLA MICROCONTROLADORES_RISC_AVRS ===============
+-- ==========================================================
+
+
+insert into microcontroladores_risc_avrs(id_componente, id_especificacion
+, tam_nucleo, tam_memoria_programa , tipo_memoria) values 
+(23, 3, '8 bits' , '32KB (16K x 16)' , 'Memoria Flash');
+
+
+insert into microcontroladores_risc_avrs(id_componente, id_especificacion
+, tam_nucleo, tam_memoria_programa , tipo_memoria) values 
+(24, 4, '8 bits' , '36KB (18K x 16)' , 'Memoria Flash');
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ======================================
+-- ======= TABLA PLACAS_ARDUINO =========
+-- ======================================
+
+insert into placas_arduinos(id_componente , procesador
+, frec_mem , tam_flash , tam_sram , tam_eeprom , cantidad_entr_sal 
+, comunic_protocolos ) values 
+(25 ,'ATMega 16U2 ' , '16 MHz' , '32KB Flash' , '2 KB' , '1 KB' 
+, 23 , 'I²C, SPI, UART/USART');
+
+
+insert into placas_arduinos(id_componente , procesador
+, frec_mem , tam_flash , tam_sram , tam_eeprom , cantidad_entr_sal 
+, comunic_protocolos ) values 
+(26 ,'ATmega328p' , '16 MHz' , '32KB Flash' , '2 KB' , '1 KB' 
+, 14 , 'I²C, SPI, UART/USART');
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ======================================
+-- ======= TABLA PLACAS_ESP8266 =========
+-- ======================================
+
+insert into placas_esp8266(id_componente , procesador
+, frec_mem , tam_flash , tam_sram , cantidad_entr_sal , comunic_protocolos
+, prot_wifi, rango_frec ) values 
+(27 ,'CPU RISC de 32-bit: Tensilica Xtensa LX106 ' , '80 MHz' , '512 KB a 4 MB' , '64 KB'  
+, 16 , 'UART/SDIO/SPI/I2C/I2S/IR Remote Control' ,'802.11 b/g/n' , '2.4G-2.5G (2400M-2483.5M)');
+
+
+insert into placas_esp8266(id_componente , procesador
+, frec_mem , tam_flash , tam_sram , cantidad_entr_sal , comunic_protocolos
+, prot_wifi, rango_frec ) values 
+(28 ,'CPU RISC de 32-bit: Tensilica Xtensa LX1012 ' , '80 MHz' , '200 KB a 2 MB' , '45 KB'  
+, 9 , 'UART/SDIO/SPI/I2C' , '802.11 b/g/n' , '2.4G-2.5G (2400M-2483.5M)');
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ====================================
+-- ======= TABLA PLACAS_ESP32 =========
+-- ====================================
+
+insert into placas_esp32(id_componente , procesador
+, frec_mem , tam_flash , tam_sram  , comunic_protocolos
+, prot_wifi, rango_frec, modo_wifi , seg_wifi , prot_bluetooth) values 
+(29 ,' ARM Xtensa 32-bit' , '-' , '-' , '-'  
+ , 'UART/HSPI/I2C/I2S/IR Remote Control' ,'802.11 b/g/n'
+ , '(2400M ~ 2483.5M) ' , 'Station/SoftAP/SoftAP + Station' , 'WPA/WPA2'
+ , 'Bluetooth v4.2 BR/EDR and BLE specification');
+
+
+insert into placas_esp32(id_componente , procesador
+, frec_mem , tam_flash , tam_sram  , comunic_protocolos
+, prot_wifi, rango_frec, modo_wifi , seg_wifi , prot_bluetooth) values 
+(30 ,'ARM Xtensa single-/dual-core 32-bit LX6' , '-' , '-' , '-'  
+ , 'UART/SDIO/SPI/I2C/I2S/IR Remote Control' ,'802.11 b/g/n (802.11n up to 150 Mbps)'
+ , '2.4G-2.5G ' , 'Station/SoftAP/SoftAP+Station/P2P' , 'WPA/WPA2/WPA2-Enterprise/WPS'
+ , 'Bluetooth v4.2 BR/EDR and BLE specification');
