@@ -1,5 +1,5 @@
 /* -----------------------------------------
- * ------ DISPOSITIVOS ELECTRÓNICOS ---------
+ * ------ DISPOSITIVOS ELECTRÃ“NICOS ---------
  * -----------------------------------------
  * 
  * 
@@ -20,14 +20,14 @@ select * from information_schema.columns where table_name='componentes';
 update componentes set codigo = 'HDGHFK-KSH13006' where id = 1;
 update componentes set nro_pieza = 'KSH13006' where id = 1;
 
--- Actualizamos el stock para transistores según hoja de datos
+-- Actualizamos el stock para transistores segÃºn hoja de datos
 update componentes as comp set stock = 450
 from componentes_detalles as comp_det where 
 (comp.categoria = 'Transistores BJT' 
 and comp.id = comp_det.id_componente
 and comp_det.hoja_de_datos = 'https://alltransistors.com/adv/pdfdatasheet_inchange_semiconductor/3cd010g.pdf');
 
--- Actualizamos el precio para capacitores según hoja de datos y fabricante
+-- Actualizamos el precio para capacitores segÃºn hoja de datos y fabricante
 update componentes as comp set precio = 12
 from componentes_detalles as comp_det where 
 (comp.categoria = 'Capacitores Electroliticos' 
@@ -72,8 +72,8 @@ on comp_det.id_componente  = comp.id
 where categoria = 'Placas Arduino' and nro_pieza='UTT-ARDUINO-NANO';
 
 
--- Actualizamos material y voltajes para placas arduino según nro de pieza
-update componentes_detalles as comp_det set material = 'Aluminio aleación'
+-- Actualizamos material y voltajes para placas arduino segÃºn nro de pieza
+update componentes_detalles as comp_det set material = 'Aluminio aleaciÃ³n'
 , voltaje_recomendado='3 - 3.3 vdc', voltaje_min_entrada = '3 vdc'
 , voltaje_max_entrada = '3.3 vdc'
 from componentes as comp
@@ -113,10 +113,17 @@ where comp.categoria = 'Transistores BJT'
 and comp_det.hoja_de_datos = 'https://category.alldatasheet.com/index.jsp?components=TRANSISTOR'
 and trans_bip.tipo = 'NPN';
 
-/*
--- Actualizamos voltajes según tipo de transistor
-update transistores_bipolares as trans_bip
-set 
-*/
 
+-- Actualizamos voltajes segun tipo de transistor
+update transistores_bipolares as trans_bip
+set voltaje_colec_emis = '-120 VDC', voltaje_colec_base = '-230 VDC'
+, voltaje_emis_base = '-3.2 VDC', voltaje_colec_emis_sat = '-2.5 VDC'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (comp.categoria = 'Transistores BJT' 
+and comp_det.hoja_de_datos = 'https://category.alldatasheet.com/index.jsp?components=TRANSISTOR'
+and trans_bip.tipo = 'NPN');
+
+	
 
