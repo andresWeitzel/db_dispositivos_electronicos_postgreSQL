@@ -162,7 +162,8 @@ Base de Datos acerca de Dispositivos Electrónicos, tales como transistores, cap
 
 #### Documentación
 * [Documentación postgreSQL](https://www.postgresqltutorial.com/postgresql-administration/postgresql-create-database/)
-
+* [Join tablas](https://www.postgresql.org/docs/current/tutorial-join.html)
+* [Tipos de Join tablas](https://www.guru99.com/postgresql-joins-left-right.html)
 
 </details>
 
