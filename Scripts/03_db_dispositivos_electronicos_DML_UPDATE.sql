@@ -113,7 +113,6 @@ where comp.categoria = 'Transistores BJT'
 and comp_det.hoja_de_datos = 'https://category.alldatasheet.com/index.jsp?components=TRANSISTOR'
 and trans_bip.tipo = 'NPN';
 
-
 -- Actualizamos voltajes segun tipo de transistor
 update transistores_bipolares as trans_bip
 set voltaje_colec_emis = '-120 VDC', voltaje_colec_base = '-230 VDC'
@@ -125,5 +124,88 @@ where (comp.categoria = 'Transistores BJT'
 and comp_det.hoja_de_datos = 'https://category.alldatasheet.com/index.jsp?components=TRANSISTOR'
 and trans_bip.tipo = 'NPN');
 
-	
+-- Obtenemos hoja de datos segun id_componente
+select hoja_de_datos from componentes_detalles where id=5; 
 
+-- Actualizamos corrientes y ganancias segun hoja de datos, tipo e id_componente
+update transistores_bipolares as trans_bip
+set corriente_colec  = '1.86 A', ganancia_hfe  = '110'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (comp.categoria = 'Transistores BJT' 
+and comp_det.hoja_de_datos = 'https://www.alldatasheet.com/datasheet-pdf/pdf/907361/ROHM/DTA143EMFHA.html'
+and trans_bip.tipo = 'NPN'
+and trans_bip.id_componente = 5);
+
+-- Actualizamos disip_max y temp_juntura segun id_componente
+update transistores_bipolares as trans_bip
+set disip_max  = '15 W', temp_juntura  = '186° C'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (trans_bip.id_componente = 2);
+
+
+select * from transistores_bipolares;
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- =============================================
+-- ======= TABLA TRANSISTORES_MOSFET ===========
+-- =============================================
+
+select * from componentes;
+select * from componentes_detalles;
+select * from transistores_mosfet;
+select * from information_schema.columns where table_name='transistores_mosfet';
+
+
+
+-- Actualizar todas las especificaciones según id_componente y tipo
+update transistores_mosfet as trans_mosf
+set corriente_cc_drenaje = '10.4 A'
+, disip_max = '35 W'
+, temp_op_max = '170 °C'
+, conduct_drenaje_sustrato = '95 (118) pF'
+, resist_drenaje_fuente = '0.178 (0.142) Ohm'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (trans_mosf.id_componente = 9 and tipo = 'pMOS');
+
+
+-- Actualizar todas las especificaciones según id_componente y tipo
+update transistores_mosfet as trans_mosf
+set voltaje_drenaje_fuente = '120 VDC'
+,corriente_cc_drenaje = '22.2 A'
+, disip_max = '55 W'
+, temp_op_max = '250 °C'
+, conduct_drenaje_sustrato = '120 (135) pF'
+, resist_drenaje_fuente = '1.872 (1.242) Ohm'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (trans_mosf.id_componente = 10 and tipo = 'nMOS');
+
+
+select * from transistores_mosfet;
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ====================================================
+-- ======= TABLA CAPACITORES_ELECTROLITICOS ===========
+-- ====================================================
+
+select * from componentes;
+select * from componentes_detalles;
+select * from capacitores_electroliticos;
+select * from information_schema.columns where table_name='capacitores_electroliticos';
