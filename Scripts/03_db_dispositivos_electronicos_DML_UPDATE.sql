@@ -209,3 +209,111 @@ select * from componentes;
 select * from componentes_detalles;
 select * from capacitores_electroliticos;
 select * from information_schema.columns where table_name='capacitores_electroliticos';
+
+-- Actualizamos capac y toler según id_componente y hoja de datos
+update capacitores_electroliticos as cap_electr
+set capacitancia = '22 µF a 12000 µF'
+, tolerancia = '5/+20%'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (cap_electr.id_componente=11
+and comp_det.hoja_de_datos='https://ar.mouser.com/datasheet/2/427/136rvi-2888792.pdf');
+
+--Actualizamos todos los registros de rango_temp
+update capacitores_electroliticos set rango_temperatura  = 
+replace(rango_temperatura , '+' , ' to ');
+
+
+-- Actualizamos rango_temp y rango_tension según id y tipo
+update capacitores_electroliticos as cap_electr
+set rango_temperatura = '50 to 145°C'
+, rango_tension_nominal = '25-63 VDC'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (cap_electr.id=2 and cap_electr.tipo='Plomo Axial');
+
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ====================================================
+-- ======= TABLA RESISTORES_ALTA_FRECUENCIA ===========
+-- ====================================================
+
+select * from componentes;
+select * from componentes_detalles;
+select * from resistores_alta_frecuencia;
+select * from information_schema.columns where table_name='resistores_alta_frecuencia';
+
+-- Actualizamos todos los campos del registro según id
+update resistores_alta_frecuencia as res_alt_frec
+set capacitancia = '12 µF'
+, rango_tolerancia = ' +- 1%, +- 5%, +- 10%, +- 20%'
+, rango_resis_gral = '20 to 100 Ohms'
+, rango_resis_microondas = '+- 100 Ohms'
+, capacitancia_parasita = '0.05 µF'
+, rango_temperatura = '-55 / +125 °C'
+, tension_operativa = '110 Vmax'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (res_alt_frec.id = 1);
+
+
+-- Actualizamos todos los campos del registro según id
+update resistores_alta_frecuencia as res_alt_frec
+set capacitancia = '4 µF'
+, rango_tolerancia = ' +- 40%'
+, rango_resis_gral = '15 to 90 Ohms'
+, rango_resis_microondas = '+- 120 Ohms'
+, capacitancia_parasita = '0.08 µF'
+, rango_temperatura = '-80 / +150 °C'
+, tension_operativa = '120 Vmax'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where (res_alt_frec.id = 2);
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ==========================================================
+-- ======= TABLA MICROCONTROLADORES_ESPECIF ===============
+-- ==========================================================
+
+select * from componentes;
+select * from componentes_detalles;
+select * from microcontroladores_especif;
+select * from information_schema.columns where table_name='microcontroladores_especif';
+
+--Actualizamos todos los registros para temp_funcionamiento
+update microcontroladores_especif set temp_funcionamiento  = 
+replace(temp_funcionamiento , '~' , 'to');
+
+--Actualizamos todos los registros para frec_operacion
+update microcontroladores_especif set frec_operacion  = 
+replace(frec_operacion , 'DC-' , '');
+update microcontroladores_especif set frec_operacion  = 
+replace(frec_operacion , 'Mhz' , 'Mhz (DC)');
+
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ==========================================================
+-- ======= TABLA MICROCONTROLADORES_RISC_PICS ===============
+-- ==========================================================
+select * from componentes;
+select * from componentes_detalles;
+select * from microcontroladores_risc_pics;
+select * from information_schema.columns where table_name='microcontroladores_risc_pics';
