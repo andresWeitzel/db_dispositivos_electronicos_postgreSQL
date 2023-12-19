@@ -1,5 +1,5 @@
 /* -----------------------------------------
- * ------ DISPOSITIVOS ELECTRÓNICOS ---------
+ * ------ DISPOSITIVOS ELECTRONICOS  ---------
  * -----------------------------------------
  * 
  * 
@@ -27,7 +27,7 @@ from componentes_detalles as comp_det where
 and comp.id = comp_det.id_componente
 and comp_det.hoja_de_datos = 'https://alltransistors.com/adv/pdfdatasheet_inchange_semiconductor/3cd010g.pdf');
 
--- Actualizamos el precio para capacitores según hoja de datos y fabricante
+-- Actualizamos el precio para capacitores segun hoja de datos y fabricante
 update componentes as comp set precio = 12
 from componentes_detalles as comp_det where 
 (comp.categoria = 'Capacitores Electroliticos' 
@@ -317,3 +317,115 @@ select * from componentes;
 select * from componentes_detalles;
 select * from microcontroladores_risc_pics;
 select * from information_schema.columns where table_name='microcontroladores_risc_pics';
+
+update microcontroladores_risc_pics as micr_risc_pics 
+set memoria_programa = '16700 bytes'
+, memoria_datos = '800 bytes', memoria_datos_eeprom = '256 bytes'
+, cantidad_fuentes_interrup = '22', cantidad_timers = '6'
+, set_instrucciones = '75 Instructions; 83 with Extended Instruction Set Enabled.'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where micr_risc_pics.id_componente = 22;
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ==========================================================
+-- ======= TABLA MICROCONTROLADORES_RISC_AVRS ===============
+-- ==========================================================
+select * from componentes;
+select * from componentes_detalles;
+select * from microcontroladores_risc_avrs;
+select * from information_schema.columns where table_name='microcontroladores_risc_avrs';
+
+update microcontroladores_risc_avrs as micr_risc_avrs 
+set tam_nucleo = '8 bits'
+, tam_memoria_programa = '32KB (16K x 16)'
+, tipo_memoria = 'Memoria Flash'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where micr_risc_avrs.id_especificacion = 3;
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ======================================
+-- ======= TABLA PLACAS_ARDUINO =========
+-- ======================================
+
+select * from componentes;
+select * from componentes_detalles;
+select * from placas_arduinos;
+select * from information_schema.columns where table_name='placas_arduinos';
+
+update placas_arduinos as plac_ard
+set procesador = 'ATMega 18U2'
+, frec_mem = '17-18 MHz'
+, tam_flash = '32 KB'
+, tam_sram = '2 KB'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where plac_ard.id_componente = 25;
+
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ======================================
+-- ======= TABLA PLACAS_ESP8266 =========
+-- ======================================
+
+select * from componentes;
+select * from componentes_detalles;
+select * from placas_esp8266;
+select * from information_schema.columns where table_name='placas_esp8266';
+
+update placas_esp8266 as plac_esp8266
+set procesador = 'CPU RISC de 32-bit: Tensilica Xtensa LX109'
+, frec_mem = '80-90 MHz'
+, tam_flash = '600 KB a 4 MB'
+, tam_sram = '64 KB'
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where plac_esp8266.id_componente = 27;
+
+-- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+
+
+-- ====================================
+-- ======= TABLA PLACAS_ESP32 =========
+-- ====================================
+
+select * from componentes;
+select * from componentes_detalles;
+select * from placas_esp32;
+select * from information_schema.columns where table_name='placas_esp32';
+
+update placas_esp32 as plac_esp32
+set procesador = 'ARM Xtensa 32-bit | dua-core 32 bits'
+, frec_mem = '40-80 MHz'
+, tam_flash = '16 MB'
+, tam_sram = '230 KB'
+, cantidad_entr_sal = 12
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where plac_esp32.id_componente = 29;
+
+update placas_esp32 as plac_esp32
+set frec_mem = '40-90 MHz'
+, tam_flash = '14-18 MB'
+, tam_sram = '270 KB'
+, cantidad_entr_sal = 12
+from componentes as comp
+inner join componentes_detalles as comp_det
+on comp.id = comp_det.id_componente
+where plac_esp32.id_componente = 30;
